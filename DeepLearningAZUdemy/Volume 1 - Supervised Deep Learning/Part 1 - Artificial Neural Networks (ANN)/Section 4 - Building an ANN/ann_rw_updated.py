@@ -62,3 +62,8 @@ y_pred = (y_pred > 0.5)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+correct_predictions = cm[0][0] + cm[1][1]
+incorrect_predictions = cm[1][0] + cm[0][1]
+total = correct_predictions + incorrect_predictions
+print("Pct Correct: ", correct_predictions / total)
+print("Pct Incorrect: ", incorrect_predictions / total)
