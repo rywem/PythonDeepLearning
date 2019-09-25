@@ -71,3 +71,28 @@ incorrect_predictions = cm[1][0] + cm[0][1]
 total = correct_predictions + incorrect_predictions
 print("Pct Correct: ", correct_predictions / total)
 print("Pct Incorrect: ", incorrect_predictions / total)
+
+print("----------")
+print("Make prediction")
+
+# Predicting a single new observation
+"""
+Predict if the customer with the following information will leave the bank:
+    Geography: France
+    Credit Score: 600
+    Gender: Male
+    Age: 40
+    Tenure: 3
+    Balance: 60000
+    Number of Products: 2
+    Has Credit Card: Yes
+    Is Active Memeber: Yes
+    Estimated Salary: 50000
+"""
+single_prediction_array = np.array([[0, 0, 600, 0, 40, 3, 60000, 2, 1, 1, 50000]]) # Double square brackets to create horizontal row of values,
+# Apply same scale as training set
+scaled_single_prediction = sc.transform(single_prediction_array)
+new_prediction = classifier.predict(scaled_single_prediction)
+
+new_prediction = (new_prediction > 0.5)
+print(new_prediction) # returns false, customer won't leave
