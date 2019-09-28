@@ -37,16 +37,18 @@ X_test = sc.transform(X_test)
 import keras 
 from keras.models import Sequential
 from keras.layers import Dense
-
-"""
+from keras.layers import Dropout
+'''
 # Initialising the ANN
 classifier = Sequential();
 
-# Adding the input layer and the first hidden layer
+# Adding the input layer and the first hidden layer with dropout
 classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim = 11 ))
+classifier.add(Dropout(rate = 0.1))
 
 # Adding the second hidden layer
 classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu' ))
+classifier.add(Dropout(rate = 0.1))
 
 # Part 3 - Making the predictions and evaluating the model
 classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid' ))
@@ -85,7 +87,8 @@ new_prediction = classifier.predict(scaled_single_prediction)
 
 new_prediction = (new_prediction > 0.5)
 print(new_prediction) # returns false, customer won't leave
-"""
+
+
 # Evaluating the ANN
 # Implement k-fold cross validation
 from keras.wrappers.scikit_learn import KerasClassifier 
@@ -104,9 +107,36 @@ accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, c
 
 mean = accuracies.mean()
 variance = accuracies.std()
+'''
+# Dropout: https://www.udemy.com/deeplearning/learn/lecture/6743788#questions
+# Solution to overfitting: Dropout regularization
+# See dropout in classifier.add(Dropout()) 
+
+# Parameter tuning: https://www.udemy.com/deeplearning/learn/lecture/6743798#questions
+from keras.wrappers.scikit_learn import KerasClassifier 
+from sklearn.model_selection import GridSearchCV
+#alternative from sklearn.grid_search import GridSearchCV
+
+def build_classifier(optimizer):
+    classifier = Sequential();        
+    classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim = 11 ))    
+    classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu' ))
+    classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid' ))
+    classifier.compile(optimizer = optimizer, loss = 'binary_crossentropy', metrics = ['accuracy'])
+    return classifier
+
+classifier = KerasClassifier(build_fn = build_classifier)
+#Grid search
+parameters = {'batch_size' : [25, 32],
+              'epochs' : [100, 500],
+              'optimizer' : ['adam', 'rmsprop']}
+grid_search = GridSearchCV(estimator = classifier,
+                           param_grid = parameters,
+                           scoring = 'accuracy',
+                           cv = 10)
+
+grid_search.fit(X_train, y_train)
+best_parameters = grid_search.best_params_
+best_accuracy = grid_search.best_score_
 
 
-# Improving the ANN
-
-
-# Tuning the ANN

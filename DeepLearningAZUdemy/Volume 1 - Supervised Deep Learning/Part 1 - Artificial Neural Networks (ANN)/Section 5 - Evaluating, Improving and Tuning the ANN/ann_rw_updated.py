@@ -33,7 +33,45 @@ X_test = sc.transform(X_test)
 import keras 
 from keras.models import Sequential
 from keras.layers import Dense
+from keras.layers import Dropout
 
+classifier = Sequential()
+classifier.add(Dense(6, input_dim = 11, activation = 'relu'))
+classifier.add(Dropout(rate = 0.1))
+classifier.add(Dense(6, activation = 'relu' ))
+classifier.add(Dropout(rate = 0.1))
+classifier.add(Dense(1, activation = 'sigmoid' ))    
+classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+# Fitting the ANN to the training set
+classifier.fit(X_train, y_train, batch_size = 10, epochs = 100)
+# Predicting the Test set results
+y_pred = classifier.predict(X_test)
+# Set threshold for true or false
+y_pred = (y_pred > 0.5)
+
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+correct_predictions = cm[0][0] + cm[1][1]
+incorrect_predictions = cm[1][0] + cm[0][1]
+total = correct_predictions + incorrect_predictions
+print("Pct Correct: ", correct_predictions / total)
+print("Pct Incorrect: ", incorrect_predictions / total)
+
+print("----------")
+print("Make prediction")
+
+# Predicting a single new observation
+
+single_prediction_array = np.array([[0, 0, 600, 0, 40, 3, 60000, 2, 1, 1, 50000]]) # Double square brackets to create horizontal row of values,
+# Apply same scale as training set
+scaled_single_prediction = sc.transform(single_prediction_array)
+new_prediction = classifier.predict(scaled_single_prediction)
+
+new_prediction = (new_prediction > 0.5)
+print(new_prediction) # returns false, customer won't leave
+
+'''
 from keras.wrappers.scikit_learn import KerasClassifier 
 from sklearn.model_selection import cross_val_score
 
@@ -50,3 +88,9 @@ accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, c
 
 mean = accuracies.mean()
 variance = accuracies.std()
+'''
+# Dropout: https://www.udemy.com/deeplearning/learn/lecture/6743788#questions
+# Solution to overfitting: Dropout regularization
+# See dropout in classifier.add(Dropout()) 
+
+# Parameter tuning: https://www.udemy.com/deeplearning/learn/lecture/6743798#questions
