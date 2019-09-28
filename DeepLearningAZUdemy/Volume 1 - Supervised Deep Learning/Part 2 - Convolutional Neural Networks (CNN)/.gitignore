@@ -1,0 +1,3 @@
+# Ignore jpg training and test images.
+*.jpg
+*.jpeg
