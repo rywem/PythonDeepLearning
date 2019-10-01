@@ -38,6 +38,12 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
+
+# tensorflow-gpu-rc2
+#import tensorflow as tf
+#from tensorflow.python.keras.models import Sequential
+#from tensorflow.python.keras.layers import Dense, Dropout
+
 '''
 # Initialising the ANN
 classifier = Sequential();
