@@ -20,7 +20,9 @@
 1. Papers
 	1. [Learning Long-Term Dependencies with Gradient Descent is Difficult](http://ai.dinfo.unifi.it/paolo//ps/tnn-94-gradient.pdf)
 	2. [On the Difficult of Training Recurrent Neural Networks](http://www.jmlr.org/proceedings/papers/v28/pascanu13.pdf)
-2. Notes 
+2. Blogs
+	1. (Understanding LSTM Networks)[http://colah.github.io/posts/2015-08-Understanding-LSTMs/]
+3. Notes 
 	1. Vanishing Gradient
 		1. Solutions:
 			1. Weight Initialization
