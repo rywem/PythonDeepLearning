@@ -20,6 +20,7 @@
 1. Papers
 	1. [Learning Long-Term Dependencies with Gradient Descent is Difficult](http://ai.dinfo.unifi.it/paolo//ps/tnn-94-gradient.pdf)
 	2. [On the Difficult of Training Recurrent Neural Networks](http://www.jmlr.org/proceedings/papers/v28/pascanu13.pdf)
+	3. [LSTM: A Search Space Odyssey](http://arxiv.org/pdf/1503.04069.pdf)
 2. Blogs
 	1. (Understanding LSTM Networks)[http://colah.github.io/posts/2015-08-Understanding-LSTMs/]
 3. Notes 
@@ -33,7 +34,11 @@
 			1. Truncated Backpropagation
 			2. Penalties
 			3. Maximum Clipping
-    
+	3. LSTMs
+		1. Theory: LSTMs have a memory cell which flows through "time" freely. In some cases things are added or updated, but otherwise flows relatively freely, thus removing the vanishing gradient problem.
+		2. [LSTM Chain](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png)
+			1. Vector Transfer: Any line moving through the architecture.
+			2. Concatenation: 2 lines combining into one. Best way to imagine it is that lines are moving in parallel. 
 ### Udemy Courses
 1. [Deep Learning A-Z™: Hands-On Artificial Neural Networks](https://www.udemy.com/course/deeplearning/)
 2. [Machine Learning, Data Science and Deep Learning with Python](https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on/)
