@@ -22,6 +22,7 @@
 	2. [On the Difficult of Training Recurrent Neural Networks](http://www.jmlr.org/proceedings/papers/v28/pascanu13.pdf)
 	3. [LSTM: A Search Space Odyssey](http://arxiv.org/pdf/1503.04069.pdf)
 	4. [Long Short-Term Memory](http://bioinf.jku.at/publications/older/2604.pdf) - The original paper.
+	5. [Visualizing and Understanding Recurrent Networks](https://arxiv.org/pdf/1506.02078.pdf)
 2. Blogs
 	1. (Understanding LSTM Networks)[http://colah.github.io/posts/2015-08-Understanding-LSTMs/]
 	2. [Understanding LSTMs and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
