@@ -25,6 +25,8 @@
 2. Blogs
 	1. (Understanding LSTM Networks)[http://colah.github.io/posts/2015-08-Understanding-LSTMs/]
 	2. [Understanding LSTMs and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
+	3. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+	4. [Hacker's guide to Neural Networks](http://karpathy.github.io/neuralnets/)
 3. Notes 
 	1. Vanishing Gradient
 		1. Solutions:
@@ -44,6 +46,9 @@
 			3. Pointwise Operations: "X", "+"
 				1. Think of it as a valve
 				2. Represented in literature formulas as: "f" "v" "o"
+				
+### Blogs
+1. Andrej Karpathy [karpathy.github.io](http://karpathy.github.io/) | [https://medium.com/@karpathy](https://medium.com/@karpathy)
 ### Udemy Courses
 1. [Deep Learning A-Z™: Hands-On Artificial Neural Networks](https://www.udemy.com/course/deeplearning/)
 2. [Machine Learning, Data Science and Deep Learning with Python](https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on/)
