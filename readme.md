@@ -23,6 +23,7 @@
 	3. [LSTM: A Search Space Odyssey](http://arxiv.org/pdf/1503.04069.pdf)
 	4. [Long Short-Term Memory](http://bioinf.jku.at/publications/older/2604.pdf) - The original paper.
 	5. [Visualizing and Understanding Recurrent Networks](https://arxiv.org/pdf/1506.02078.pdf)
+	6. [LSTM: A Search Space Odyssey](https://arxiv.org/pdf/1503.04069.pdf)
 2. Blogs
 	1. (Understanding LSTM Networks)[http://colah.github.io/posts/2015-08-Understanding-LSTMs/]
 	2. [Understanding LSTMs and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
@@ -47,6 +48,8 @@
 			3. Pointwise Operations: "X", "+"
 				1. Think of it as a valve
 				2. Represented in literature formulas as: "f" "v" "o"
+### Self Organizing Maps (SOM)
+
 				
 ### Blogs
 1. Andrej Karpathy [karpathy.github.io](http://karpathy.github.io/) | [https://medium.com/@karpathy](https://medium.com/@karpathy)

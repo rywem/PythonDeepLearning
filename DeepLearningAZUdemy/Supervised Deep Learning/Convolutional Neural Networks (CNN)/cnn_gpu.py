@@ -97,7 +97,7 @@ with tf.device('/gpu:0'):
         img = np.expand_dims(img, axis = 0) # Adds an additional dimension to our test image, corresponds to the batch
         return img
     
-    test_image = loadImage('../dataset/single_prediction/cat_or_dog_3.jpg')
+    test_image = loadImage('./dataset/single_prediction/cat_or_dog_3.jpg')
     prediction = classifier.predict(test_image)
     indices = training_set.class_indices # Get corresponding category mapping
     

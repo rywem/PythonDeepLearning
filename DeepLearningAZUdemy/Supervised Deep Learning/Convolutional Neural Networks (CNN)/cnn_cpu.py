@@ -87,7 +87,7 @@ with tf.device('/cpu:0'):
     
     from keras.preprocessing import image
     import numpy as np
-    prediction_image = image.load_img('../dataset/single_prediction/cat_or_dog_3.jpg')
+    prediction_image = image.load_img('./dataset/single_prediction/cat_or_dog_3.jpg')
     prediction_image = image.image_to_array(prediction_image)
     prediction_image = np.expand_dims(prediction_image, axis=0) 
     
