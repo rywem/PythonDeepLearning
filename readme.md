@@ -1,5 +1,6 @@
 # PythonDeepLearning Repository
 
+## Supervised Deep Learning
 ### CNNs 
 1. Papers 
 	1. CNNS
@@ -48,7 +49,13 @@
 			3. Pointwise Operations: "X", "+"
 				1. Think of it as a valve
 				2. Represented in literature formulas as: "f" "v" "o"
+
+## Unsupervised Deep Learning
 ### Self Organizing Maps (SOM)
+1. Blogs
+    1. [AI Junkie SOM Example](http://www.ai-junkie.com/ann/som/som1.html)
+2. K Means Cluster
+	1. WCSS - Within-Cluster-Sum-of-Squares
 
 				
 ### Blogs
